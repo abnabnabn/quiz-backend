@@ -1,0 +1,21 @@
+services:
+  quizdb:
+    build: ./database
+    environment:
+      - POSTGRES_USER=quizuser
+      - POSTGRES_PASSWORD=quizpassword
+      - POSTGRES_DB=quizdb
+    ports:
+      - "5432:5432"
+
+  quizbackend:
+    build: ./app
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=quizdb
+      - DB_USER=quizuser
+      - DB_PASS=quizpassword
+      - SECRET_KEY=mysecretkey
+    depends_on:
+      - quizdb
