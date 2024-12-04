@@ -1,0 +1,14 @@
+Generate questions with answers and 3 incorrect choices in JSON format, categorized into 3 categories: History, Television, and Movies. Each category should have 10 questions.  Make at least one incorrect answer seems credible. Don't include questions where the answer is too obvious - for example words in the question revealing the answer. The questions should be appropriate for people living in the UK.  The JSON should have the following structure:
+[
+{
+"question": "Question text",
+"answer": "Correct answer",
+"choice1": "Incorrect choice 1",
+"choice2": "Incorrect choice 2",
+"choice3": "Incorrect choice 3",
+"category": "Category name"
+},
+{
+// ... more questions
+}
+]
