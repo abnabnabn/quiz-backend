@@ -7,7 +7,7 @@ from typing import List, Optional, Dict
 
 import psycopg2
 from fastapi import Depends, FastAPI, HTTPException, status, WebSocket, WebSocketDisconnect
-from fastapi.middleware.sessions import SessionMiddleware
+from starlette.middleware.sessions import SessionMiddleware
 from pydantic import BaseModel
 from psycopg2.extras import RealDictCursor
 
@@ -258,9 +258,9 @@ async def handle_answer(party_id: str, user_id: str, answer_index: int, websocke
 
 @app.post("/api/party/init", response_model=str)
 async def init_party(
-    conn: psycopg2.extensions.connection = Depends(get_db_connection),
     player_id: str,
     category: str,
+    conn: psycopg2.extensions.connection = Depends(get_db_connection),
     session_id: str = Depends(SessionMiddleware),
 ):
     question_service = QuestionService(conn)
@@ -280,9 +280,9 @@ async def init_party(
 
 @app.post("/api/party/{party_id}/next_question")
 async def next_question(
-    conn: psycopg2.extensions.connection = Depends(get_db_connection),
     party_id: str,
     user_id: str,
+    conn: psycopg2.extensions.connection = Depends(get_db_connection),
 ):
     question_service = QuestionService(conn)
 
@@ -309,11 +309,12 @@ async def next_question(
             await websocket.send_json({"message": "Next question"})
 
     return {"message": "Next question triggered"}
+
 @app.post("/api/party/{party_id}/join")
 async def join_party(
-    conn: psycopg2.extensions.connection = Depends(get_db_connection),
     party_id: str,
     user_id: str,
+    conn: psycopg2.extensions.connection = Depends(get_db_connection),
 ):
 
     question_service = QuestionService(conn)
