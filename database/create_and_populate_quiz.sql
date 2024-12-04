@@ -59,3 +59,5 @@ BEGIN
   END LOOP;
 END
 $do$;
+SELECT COUNT(*) FROM quiz;
+
