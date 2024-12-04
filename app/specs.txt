@@ -1,0 +1,131 @@
+
+### **Multiplayer Quiz API - FastAPI & PostgreSQL with WebSockets**
+
+#### **Purpose**  
+Facilitate a real-time multiplayer quiz game using WebSockets for communication and a PostgreSQL database for persistent storage.
+
+---
+
+### **Functionality**  
+- Store questions, answers, and choices in a PostgreSQL database, categorized by subject.  
+- Allow players to create parties and join them using a `party_id`.  
+- Use WebSockets for real-time communication between players and the server.  
+- Automatically progress to the next question when the question timeout elapses.  
+- Dynamically generate unique random questions for each party round.  
+- End the game after the specified number of rounds is completed.  
+- Retain historical player performance data, including scores per category.  
+- Skip a round with no score updates if no players submit an answer before the timeout.  
+- Terminate parties when all users become inactive.
+
+---
+
+### **API Endpoints**
+
+#### **/api/party/init (POST)**  
+- **Request Body**:
+  - `player_id`: String, the ID of the player initiating the party.  
+  - `category`: String, the category of questions for the party.  
+  - `rounds`: Integer, the number of rounds in the game.  
+  - `timeout`: Integer, the duration (in seconds) for each question (default is 30 seconds).  
+
+- **Response**:
+  - `party_id`: String, a unique ID for the created party.  
+
+- **Functionality**:
+  - Creates a new party with a unique `party_id` and `game_id`.  
+  - Initializes the game with the specified number of rounds and timeout duration.  
+  - Initializes the current round to 1 and sets the question timeout in Redis.  
+  - Stores party details in the `parties` table.  
+  - Sends an initial WebSocket notification to all connected clients in the party with the game state.  
+
+#### **/api/categories (GET)**  
+- **Response**:  
+  - JSON array containing a paginated list of available categories:  
+    ```json
+    {
+      "categories": ["Geography", "Science", "Art"],
+      "total_pages": 1,
+      "current_page": 1
+    }
+    ```  
+
+- **Functionality**:  
+  - Retrieves distinct categories from the `questions` table.  
+  - Supports pagination with query parameters (`page` and `limit`).  
+
+#### **/api/party/{party_id}/join (POST)**  
+- **Request Parameters**:
+  - `party_id`: String, the unique ID of the party.  
+
+- **Request Body**:
+  - `user_id`: String, the ID of the user joining the party.  
+
+- **Response**:
+  - JSON object indicating success:  
+    ```json
+    {
+      "message": "Joined party successfully",
+      "game_id": "the game id"
+    }
+    ```  
+
+- **Functionality**:
+  - Validates the `party_id`.  
+  - Adds the player to the `party_players` table and initializes their score to 0.  
+  - Sends a WebSocket message to all players with the updated party state.  
+
+#### **/ws/{party_id} (WebSocket)**  
+- **Request Parameters**:
+  - `party_id`: String, the unique ID of the party.  
+
+- **Functionality**:
+  - Establishes a WebSocket connection for the given `party_id`.  
+  - Sends the entire current game state (question, players, scores, round, etc.) to the client immediately upon connection.  
+  - Starts a timer for each question using the timeout duration.  
+  - Automatically progresses to the next question when the timer expires, skipping the round with no score updates if no answers are submitted.  
+  - Ends the game and notifies all players when all rounds are completed.  
+  - Updates player scores and sends the full game state after each question.  
+  - Handles player disconnections, removing them from the party, and terminates the party if all players disconnect.  
+
+---
+
+### **Database Schema**
+
+#### **Optimizations**  
+- Add **indexes**:  
+  - `party_id` in `parties` and `party_players`.  
+  - `category` in `questions`.
+
+#### **Tables**  
+##### **questions**  
+- **Columns**:
+  - `id`: SERIAL PRIMARY KEY  
+  - `question`: TEXT NOT NULL  
+  - `answer`: TEXT NOT NULL  
+  - `choice1`: TEXT NOT NULL  
+  - `choice2`: TEXT NOT NULL  
+  - `choice3`: TEXT NOT NULL  
+  - `category`: TEXT NOT NULL  
+
+##### **parties**  
+- **Columns**:
+  - `party_id`: UUID PRIMARY KEY  
+  - `game_id`: UUID NOT NULL  
+  - `player_id`: TEXT NOT NULL  
+  - `rounds`: INTEGER NOT NULL  
+  - `timeout`: INTEGER NOT NULL DEFAULT 30  
+
+##### **party_players**  
+- **Columns**:
+  - `party_id`: UUID NOT NULL  
+  - `user_id`: TEXT NOT NULL  
+  - `score`: INTEGER NOT NULL DEFAULT 0  
+  - **Primary Key**: (`party_id`, `user_id`)  
+
+##### **player_stats**  
+- **Columns**:
+  - `user_id`: TEXT NOT NULL  
+  - `category`: TEXT NOT NULL  
+  - `correct_answers`: INTEGER NOT NULL DEFAULT 0  
+  - `total_questions`: INTEGER NOT NULL DEFAULT 0  
+  - **Primary Key**: (`user_id`, `category`)  
