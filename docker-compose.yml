@@ -17,5 +17,14 @@ services:
       - DB_USER=quizuser
       - DB_PASS=quizpassword
       - SECRET_KEY=mysecretkey
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
     depends_on:
       - quizdb
+      - redis
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
