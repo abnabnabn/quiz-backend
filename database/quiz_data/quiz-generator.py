@@ -45,7 +45,7 @@ Output Format (JSON Array):
 Important: Demonstrate depth of knowledge, avoid trivial or easily guessable questions.
 """
 
-def generate_quiz_questions(config_file='quiz_categories.yaml'):
+def generate_quiz_questions(config_file='quiz-categories.yaml'):
     """
     Generate quiz questions for each category using Gemini API
     """
