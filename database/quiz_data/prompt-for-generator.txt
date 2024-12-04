@@ -1,0 +1,69 @@
+I want you to create a Python program that generates quiz questions using the Gemini AI API with the following specifications:
+
+Program Requirements:
+1. Create a configuration file (preferably YAML) with the following structure:
+   - Ability to define multiple categories
+   - Each category should have:
+     * A name
+     * A detailed description that guides question generation
+
+2. The Python script should:
+   - Read the configuration file
+   - Use the Gemini API to generate questions
+   - Generate 50 unique questions for each category
+   - Follow these question generation guidelines:
+     * Questions must be relevant to UK audiences
+     * Avoid questions with obvious answers
+     * Include one correct answer and three plausible incorrect choices
+     * Ensure questions are challenging but fair
+     * Cover diverse and interesting aspects of the category
+
+3. Implement robust error handling and logging
+   - Log generation process
+   - Handle API errors
+   - Validate generated questions
+
+4. Output requirements:
+   - Save questions for each category in separate JSON files
+   - EXACT JSON Structure (CRITICAL):
+     ```json
+     [
+       {
+         "question": "What is the specific question text?",
+         "answer": "The correct, precise answer",
+         "choice1": "First plausible incorrect answer",
+         "choice2": "Second plausible incorrect answer", 
+         "choice3": "Third plausible incorrect answer",
+         "category": "Exact category name from configuration"
+       },
+       // ... 49 more questions following this exact structure
+     ]
+     ```
+   - Validation requirements for JSON:
+     * Must be a valid JSON array
+     * Exactly 50 questions per category file
+     * All fields must be non-empty strings
+     * "category" must match the source category name exactly
+
+5. Make the configuration file easily editable by humans
+   - Clear, descriptive format
+   - Simple to modify categories and descriptions
+
+6. Use environment variable for API key
+   - Secure method of API authentication
+
+Additional Constraints:
+- Questions should be unique within a category
+- Incorrect choices should be:
+  * Plausible at first glance
+  * Clearly wrong upon closer examination
+  * Related to the topic but not correct
+- Maintain academic and factual integrity
+
+Please provide a complete implementation including:
+- Configuration file template
+- Full Python script
+- Instructions for setup and running the program
+- Detailed comments explaining the logic
+
+Ensure the solution is flexible, readable, and follows Python best practices.
