@@ -1,0 +1,242 @@
+[
+  {
+    "question": "Which British monarch reigned the longest?",
+    "answer": "Queen Victoria",
+    "choice1": "Queen Elizabeth II",
+    "choice2": "King George III",
+    "choice3": "King Henry VIII",
+    "category": "History"
+  },
+  {
+    "question": "In what year did the Great Fire of London occur?",
+    "answer": "1666",
+    "choice1": "1766",
+    "choice2": "1606",
+    "choice3": "1566",
+    "category": "History"
+  },
+  {
+    "question": "Who was the Prime Minister of the UK during World War I?",
+    "answer": "H. H. Asquith",
+    "choice1": "David Lloyd George",
+    "choice2": "Winston Churchill",
+    "choice3": "Neville Chamberlain",
+    "category": "History"
+  },
+  {
+    "question": "Which historical figure is associated with the Gunpowder Plot?",
+    "answer": "Guy Fawkes",
+    "choice1": "Robert Catesby",
+    "choice2": "Francis Tresham",
+    "choice3": "Walter Raleigh",
+    "category": "History"
+  },
+  {
+    "question": "What year did women gain the right to vote in parliamentary elections in the UK (on the same terms as men)?",
+    "answer": "1928",
+    "choice1": "1918",
+    "choice2": "1920",
+    "choice3": "1932",
+    "category": "History"
+  },
+  {
+    "question": "Who led the suffragette movement in the UK?",
+    "answer": "Emmeline Pankhurst",
+    "choice1": "Emily Davison",
+    "choice2": "Millicent Fawcett",
+    "choice3": "Lydia Becker",
+    "category": "History"
+  },
+  {
+    "question": "Which king famously had six wives?",
+    "answer": "Henry VIII",
+    "choice1": "Henry VII",
+    "choice2": "Edward VI",
+    "choice3": "Charles I",
+    "category": "History"
+  },
+  {
+    "question": "In what century was the Magna Carta signed?",
+    "answer": "13th Century",
+    "choice1": "12th Century",
+    "choice2": "14th Century",
+    "choice3": "15th Century",
+    "category": "History"
+  },
+  {
+    "question": "Which battle marked the Norman conquest of England?",
+    "answer": "Battle of Hastings",
+    "choice1": "Battle of Agincourt",
+    "choice2": "Battle of Bosworth Field",
+    "choice3": "Battle of Bannockburn",
+    "category": "History"
+  },
+  {
+    "question": "Who was the first Prime Minister of Great Britain?",
+    "answer": "Robert Walpole",
+    "choice1": "William Pitt the Elder",
+    "choice2": "Lord North",
+    "choice3": "Henry Pelham",
+    "category": "History"
+  },
+  {
+    "question": "Which British sitcom features the characters Del Boy and Rodney Trotter?",
+    "answer": "Only Fools and Horses",
+    "choice1": "The Good Life",
+    "choice2": "Open All Hours",
+    "choice3": "Keeping Up Appearances",
+    "category": "Television"
+  },
+  {
+    "question": "Who plays the Doctor in the most recent series of Doctor Who?",
+    "answer": "Ncuti Gatwa",
+    "choice1": "Jodie Whittaker",
+    "choice2": "David Tennant",
+    "choice3": "Matt Smith",
+    "category": "Television"
+  },
+  {
+    "question": "What is the name of the fictional Yorkshire village in Emmerdale?",
+    "answer": "Beckindale",
+    "choice1": "Ambridge",
+    "choice2": "Weatherfield",
+    "choice3": "Walford",
+    "category": "Television"
+  },
+  {
+    "question": "Which reality TV show is filmed in the Australian jungle?",
+    "answer": "I'm a Celebrity...Get Me Out of Here!",
+    "choice1": "Love Island",
+    "choice2": "Big Brother",
+    "choice3": "The Great British Bake Off",
+    "category": "Television"
+  },
+  {
+    "question": "Which comedian hosted the UK version of Taskmaster?",
+    "answer": "Greg Davies",
+    "choice1": "Alex Horne",
+    "choice2": "Romesh Ranganathan",
+    "choice3": "David Mitchell",
+    "category": "Television"
+  },
+  {
+    "question": "Which popular TV show features the character of Sherlock Holmes?",
+    "answer": "Sherlock",
+    "choice1": "Luther",
+    "choice2": "Line of Duty",
+    "choice3": "Broadchurch",
+    "category": "Television"
+  },
+  {
+    "question": "Which long-running British soap opera is set in Albert Square?",
+    "answer": "EastEnders",
+    "choice1": "Coronation Street",
+    "choice2": "Hollyoaks",
+    "choice3": "Emmerdale",
+    "category": "Television"
+  },
+  {
+    "question": "Which British television series features the character of Hyacinth Bucket?",
+    "answer": "Keeping Up Appearances",
+    "choice1": "Absolutely Fabulous",
+    "choice2": "The Vicar of Dibley",
+    "choice3": "One Foot in the Grave",
+    "category": "Television"
+  },
+  {
+    "question": "Which talent show features judges Simon Cowell, Amanda Holden, and Alesha Dixon?",
+    "answer": "Britain's Got Talent",
+    "choice1": "The X Factor",
+    "choice2": "The Voice UK",
+    "choice3": "Strictly Come Dancing",
+    "category": "Television"
+  },
+  {
+    "question": "Which British game show, hosted by Bradley Walsh, sees contestants answer questions and try to avoid 'The Chaser'?",
+    "answer": "The Chase",
+    "choice1": "Tipping Point",
+    "choice2": "Pointless",
+    "choice3": "Who Wants to Be a Millionaire?",
+    "category": "Television"
+  },
+  {
+    "question": "Which British film features a group of unemployed steelworkers who form a male striptease act?",
+    "answer": "The Full Monty",
+    "choice1": "Billy Elliot",
+    "choice2": "Trainspotting",
+    "choice3": "Lock, Stock and Two Smoking Barrels",
+    "category": "Movies"
+  },
+  {
+    "question": "Who directed the film 'The King's Speech'?",
+    "answer": "Tom Hooper",
+    "choice1": "Danny Boyle",
+    "choice2": "Steve McQueen",
+    "choice3": "Guy Ritchie",
+    "category": "Movies"
+  },
+  {
+    "question": "Which actress played the role of Hermione Granger in the Harry Potter film series?",
+    "answer": "Emma Watson",
+    "choice1": "Bonnie Wright",
+    "choice2": "Helena Bonham Carter",
+    "choice3": "Maggie Smith",
+    "category": "Movies"
+  },
+  {
+    "question": "Which British film tells the story of a young boy who discovers a giant peach?",
+    "answer": "James and the Giant Peach",
+    "choice1": "Charlie and the Chocolate Factory",
+    "choice2": "Matilda",
+    "choice3": "The BFG",
+    "category": "Movies"
+  },
+  {
+    "question": "Who directed the film 'Slumdog Millionaire'?",
+    "answer": "Danny Boyle",
+    "choice1": "Stephen Daldry",
+    "choice2": "Ridley Scott",
+    "choice3": "Christopher Nolan",
+    "category": "Movies"
+  },
+  {
+    "question": "Which British film features the character of Mark Renton, played by Ewan McGregor?",
+    "answer": "Trainspotting",
+    "choice1": "Shallow Grave",
+    "choice2": "28 Days Later",
+    "choice3": "The Beach",
+    "category": "Movies"
+  },
+  {
+    "question": "Which film, directed by Edgar Wright, features a zombie apocalypse in London?",
+    "answer": "Shaun of the Dead",
+    "choice1": "Hot Fuzz",
+    "choice2": "The World's End",
+    "choice3": "28 Days Later",
+    "category": "Movies"
+  },
+  {
+    "question": "Which British actor played the role of James Bond in the film 'Casino Royale'?",
+    "answer": "Daniel Craig",
+    "choice1": "Pierce Brosnan",
+    "choice2": "Timothy Dalton",
+    "choice3": "Roger Moore",
+    "category": "Movies"
+  },
+  {
+    "question": "Which British film tells the story of six unemployed miners who form a male striptease act?",
+    "answer": "The Full Monty",
+    "choice1": "Brassed Off",
+    "choice2": "Billy Elliot",
+    "choice3": "Calendar Girls",
+    "category": "Movies"
+  },
+  {
+    "question": "Which British film is a romantic comedy about a bookshop owner who falls in love with an American actress?",
+    "answer": "Notting Hill",
+    "choice1": "Love Actually",
+    "choice2": "Bridget Jones's Diary",
+    "choice3": "Four Weddings and a Funeral",
+    "category": "Movies"
+  }
+]
